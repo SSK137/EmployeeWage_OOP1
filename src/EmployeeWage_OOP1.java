@@ -6,15 +6,23 @@ public class EmployeeWage_OOP1 {
         Random rdm = new Random();          //rdm is veriable name for Random function
         int present = rdm.nextInt(2);
         int wagePerHR=20;
-        int FullDayHR=8;
-        int DailyWage= present*wagePerHR*FullDayHR;
+        int DailyWage,wrkingHR = 0;
 
         //Checking Employee is present or not
         if(present==1){
-            System.out.println("Employee is Present So Daily Wage is :"+DailyWage);
+            wrkingHR=8;
+            System.out.println("Employee is Present for full time");
+        }
+        else if(present==0){
+            wagePerHR=0;
+            System.out.println("Employee is absent");
         }
         else {
-            System.out.println("Employee is absent So Daily Wage is :"+DailyWage);
+            wrkingHR=4;
+            System.out.println("Employee Is present for part time also");
         }
+
+        DailyWage= wagePerHR * wrkingHR;
+        System.out.println("Daily Wage is :"+DailyWage);
     }
 }
